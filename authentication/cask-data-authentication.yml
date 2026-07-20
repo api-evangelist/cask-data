@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.cdap.io/cdap/current/en/admin-manual/security/index.html
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  api_key_in: []
+  oauth2_flows: []
+notes: >-
+  CDAP supports optional perimeter security. When security is enabled, clients first obtain an
+  access token from the CDAP authentication server (via the cdap-authentication-client library or
+  the /v3/security endpoints) using a configured authentication mechanism (basic, LDAP, JASPI, or
+  a custom handler), then present it as a Bearer token on every HTTP RESTful API request. On an
+  unsecured (default sandbox) deployment no credentials are required. There is no OAuth 2.0 scope
+  surface, so no scopes/ artifact is produced.
+schemes:
+- name: bearerToken
+  type: http
+  scheme: bearer
+  in: header
+  header: Authorization
+  format: "Authorization: Bearer <cdap-access-token>"
+  obtained_via:
+  - library: io.cdap.cdap:cdap-authentication-client
+  - endpoint: GET /v3/security/... (authentication server)
+  mechanisms_supported: [basic, ldap, jaspi, custom]
+  sources: [docs]
+unsecured_default:
+  note: The CDAP Sandbox runs with security disabled by default; requests to /v3/namespaces require no token.
