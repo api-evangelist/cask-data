@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: searched
+source: https://cdap.io/get-started/
+summary: >-
+  CDAP publishes a downloadable local "Sandbox" (formerly Standalone/Local Sandbox) for
+  development and evaluation — a single-node CDAP that runs the full platform, UI, and HTTP
+  RESTful API locally. It is explicitly not for production and is not patched once deployed.
+distributions:
+- kind: standalone-zip
+  platforms: [linux, macosx]
+  description: Standalone ZIP archive of CDAP for local evaluation; unpack and run bin/cdap sandbox start.
+  download: https://github.com/cdapio/cdap/releases
+  latest: 6.11.1
+- kind: docker
+  platforms: [linux, macosx, windows]
+  image: caskdata/cdap-sandbox
+  registry: https://hub.docker.com/r/caskdata/cdap-sandbox
+  description: Pre-built Docker image of the CDAP Sandbox.
+- kind: virtual-machine
+  format: ova
+  requires: Oracle VirtualBox
+  versions_range: 6.1.4 - 6.11.1
+  description: Pre-built VM images (.ova) of the CDAP Sandbox.
+local_endpoints:
+  ui: http://localhost:11011
+  rest_api_gateway: http://localhost:11015
+  rest_api_base_path: /v3/namespaces
+requirements:
+- Chrome browser
+- Apache Maven 3.0+ (to build example applications)
+- Java (JDK) runtime for the sandbox
+cloud_alternative:
+  name: Google Cloud Data Fusion Developer Edition
+  url: https://cloud.google.com/data-fusion
+  note: Cloud-native managed CDAP; the Developer Edition can be spun up from the Google Cloud Console.
+caveats:
+- The Sandbox is not intended for production use.
+- No patching is available for Sandbox/VM images once deployed.

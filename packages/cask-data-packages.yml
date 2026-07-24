@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: searched
+source: https://repo1.maven.org/maven2/io/cdap/cdap/
+notes: >-
+  CDAP (Cask Data Application Platform) publishes first-party Java client libraries to
+  Maven Central under the io.cdap.cdap groupId. Latest cdap-client on Maven Central at
+  time of capture is 6.11.4. CDAP is JVM-based; there is no first-party npm/PyPI/NuGet
+  client SDK (the cdap-ui JavaScript is the web UI, not a client SDK).
+packages:
+- language: java
+  registry: maven-central
+  group: io.cdap.cdap
+  name: cdap-client
+  url: https://repo1.maven.org/maven2/io/cdap/cdap/cdap-client/
+  install: "io.cdap.cdap:cdap-client (Maven dependency)"
+  latest: 6.11.4
+  official: true
+  description: Java client library for the CDAP HTTP RESTful API (lifecycle, metadata, datasets, programs, services).
+- language: java
+  registry: maven-central
+  group: io.cdap.cdap
+  name: cdap-authentication-client
+  url: https://repo1.maven.org/maven2/io/cdap/cdap/cdap-authentication-client/
+  install: "io.cdap.cdap:cdap-authentication-client (Maven dependency)"
+  official: true
+  description: Client library for obtaining CDAP access tokens against a security-enabled CDAP instance.
+- language: java
+  registry: maven-central
+  group: io.cdap.cdap
+  name: cdap-cli
+  url: https://repo1.maven.org/maven2/io/cdap/cdap/cdap-cli/
+  install: "io.cdap.cdap:cdap-cli (Maven dependency)"
+  official: true
+  description: The CDAP Command Line Interface (binary surface catalogued in cli/).
+- language: java
+  registry: maven-central
+  group: io.cdap.cdap
+  name: cdap-api
+  url: https://repo1.maven.org/maven2/io/cdap/cdap/cdap-api/
+  install: "io.cdap.cdap:cdap-api (Maven dependency)"
+  official: true
+  description: CDAP developer API for building applications, programs, and datasets on the platform.
+- language: java
+  registry: maven-central
+  group: io.cdap.cdap
+  name: cdap-explore-client
+  url: https://repo1.maven.org/maven2/io/cdap/cdap/cdap-explore-client/
+  install: "io.cdap.cdap:cdap-explore-client (Maven dependency)"
+  official: true
+  description: Java client for the CDAP Explore (SQL query) service.

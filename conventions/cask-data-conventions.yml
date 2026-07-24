@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+summary: >-
+  Cross-cutting conventions of the CDAP HTTP RESTful API (v3), derived from the CDAP Reference
+  Manual and the platform's resource model. All operations are namespace-scoped under
+  /v3/namespaces/{namespace}; requests and responses are JSON; errors are signalled by HTTP status.
+authentication:
+  style: bearer-token (optional; enabled with perimeter security)
+  header: Authorization
+  ref: authentication/cask-data-authentication.yml
+base_path:
+  version: v3
+  root: /v3
+  namespace_scoping: /v3/namespaces/{namespace}
+  system_scoping: /v3/system, /v3/security
+content_type:
+  request: application/json
+  response: application/json
+idempotency:
+  supported: false
+  note: >-
+    No documented idempotency-key contract. Lifecycle operations are largely PUT-based (create/
+    update by resource id) which are naturally idempotent, but there is no Idempotency-Key header.
+pagination:
+  documented: partial
+  patterns:
+  - surface: metadata search
+    params: [offset, limit, cursorRequested, showHidden]
+    response_fields: [results, total, cursor]
+  - surface: logs
+    params: [start, stop, max, fromOffset]
+  - surface: metrics
+    params: [start, end, resolution, aggregate]
+versioning:
+  api_version_in: uri-path (v3)
+  ref: lifecycle/cask-data-lifecycle.yml
+error_envelope:
+  style: http-status + text/JSON message body
+  ref: errors/cask-data-problem-types.yml
+  note: Non-2xx responses carry an HTTP status code and a plain-text or JSON error message; not RFC 9457 problem+json.
+rate_limiting:
+  documented: false
+  note: No published rate-limit headers; CDAP is typically self-hosted so limits are deployment-defined.

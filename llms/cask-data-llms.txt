@@ -1,0 +1,42 @@
+# Cask Data (CDAP)
+
+> Cask Data was the developer-tools company (originally Continuuity) behind CDAP, the Cask Data Application Platform — a 100% open source (Apache 2.0) framework for building batch and real-time data-analytics applications and self-service ETL/ELT data pipelines. Google acquired Cask Data in 2018; CDAP now powers Google Cloud Data Fusion while continuing as an open source project (github.com/cdapio) with a versioned HTTP RESTful API rooted at /v3/namespaces, a Java client library and CLI, and a downloadable local Sandbox.
+
+## Product
+- [CDAP homepage](https://cdap.io): Open source data-analytics application and pipeline framework.
+- [Get started / Sandbox](https://cdap.io/get-started/): Download the local Sandbox (zip, Docker `caskdata/cdap-sandbox`, or VM).
+- [Google Cloud Data Fusion](https://cloud.google.com/data-fusion): Managed, cloud-native CDAP.
+
+## Docs
+- [Documentation (Confluence wiki)](https://cdap.atlassian.net/wiki/spaces/DOCS/overview): Full CDAP reference and admin manuals.
+- [HTTP RESTful API reference](https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html): The v3 REST API (lifecycle, metadata, datasets, query, metrics, preferences).
+- [CLI reference](https://docs.cdap.io/cdap/current/en/reference-manual/cli/index.html): First-party command-line interface.
+- [Security / admin](https://docs.cdap.io/cdap/current/en/admin-manual/security/index.html): Perimeter security and access tokens.
+
+## Code & packages
+- [GitHub organization](https://github.com/cdapio): CDAP source and related projects.
+- [cdapio/cdap](https://github.com/cdapio/cdap): Core platform (Apache 2.0, latest release 6.11.1).
+- [Releases](https://github.com/cdapio/cdap/releases): Dated GitHub releases.
+- [cdap-client on Maven Central](https://repo1.maven.org/maven2/io/cdap/cdap/cdap-client/): Java client SDK (`io.cdap.cdap:cdap-client`).
+- [cdap-cli on Maven Central](https://repo1.maven.org/maven2/io/cdap/cdap/cdap-cli/): CLI (`io.cdap.cdap:cdap-cli`).
+- [cdap-authentication-client](https://repo1.maven.org/maven2/io/cdap/cdap/cdap-authentication-client/): Access-token client.
+
+## Community & security
+- [Blog (Medium)](https://medium.com/cdapio): CDAP engineering blog.
+- [Mailing list](https://groups.google.com/g/cdap-dev): Community discussion (cdap-dev@googlegroups.com).
+- [Security policy](https://github.com/cdapio/cdap/blob/develop/SECURITY.md): Report vulnerabilities via g.co/vulnz (Google Security Team).
+
+## API Evangelist artifacts
+- packages/cask-data-packages.yml — first-party Maven client libraries
+- cli/cask-data-cli.yml — CDAP CLI command surface
+- sandbox/cask-data-sandbox.yml — local Sandbox distributions and endpoints
+- authentication/cask-data-authentication.yml — bearer-token auth profile
+- conventions/cask-data-conventions.yml — REST conventions (v3, pagination, errors)
+- data-model/cask-data-data-model.yml — namespace/app/program/dataset entity graph
+- errors/cask-data-problem-types.yml — HTTP status error catalog
+- lifecycle/cask-data-lifecycle.yml — versioning and release cadence
+- changelog/cask-data-changelog.yml — recent releases
+- conformance/cask-data-conformance.yml — standards conformance
+- security/cask-data-vulnerability-disclosure.yml — disclosure via g.co/vulnz
+- security/cask-data-domain-security.yml — TLS/DNS posture probe
+- mcp/cask-data-mcp.yml — candidate MCP tool list derived from the REST API

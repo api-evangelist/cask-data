@@ -1,8 +1,25 @@
 aid: cask-data
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cask-data.png
 name: Cask Data
-description: 'Cask Data is a company surfaced as a portfolio company of amplify-partners, battery-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: developer-tools. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: 'Cask Data was the developer-tools company (originally Continuuity) behind CDAP,
+  the Cask Data Application Platform — a 100% open source, integrated framework for building and
+  running batch and real-time data-analytics applications and self-service ETL/ELT data pipelines
+  on Hadoop, Spark, and the cloud. Google acquired Cask Data in 2018; CDAP now powers Google
+  Cloud Data Fusion while continuing as an Apache 2.0 open source project (github.com/cdapio) with a
+  versioned HTTP RESTful API rooted at /v3/namespaces, a Java client library and CLI, and a
+  downloadable local Sandbox. Backed by Amplify Partners and Battery Ventures.'
 url: https://raw.githubusercontent.com/api-evangelist/cask-data/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,10 +30,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Developer Tools
+- Data Integration
+- Data Pipelines
+- ETL
+- Big Data
+- Analytics
+- Open Source
+- Hadoop
+- CDAP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,4 +50,61 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://cdap.io
+- type: Documentation
+  url: https://cdap.atlassian.net/wiki/spaces/DOCS/overview
+- type: APIReference
+  url: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+- type: GettingStarted
+  url: https://cdap.io/get-started/
+- type: Blog
+  url: https://medium.com/cdapio
+- type: GitHubOrganization
+  url: https://github.com/cdapio
+- type: SourceCode
+  url: https://github.com/cdapio/cdap
+- type: Support
+  url: https://groups.google.com/g/cdap-dev
+- type: License
+  url: https://github.com/cdapio/cdap/blob/develop/LICENSE
+- type: Security
+  url: https://github.com/cdapio/cdap/blob/develop/SECURITY.md
+- type: DataFusion
   url: https://cloud.google.com/data-fusion
+- type: Packages
+  url: packages/cask-data-packages.yml
+- type: SDKs
+  url: packages/cask-data-packages.yml
+- type: CLI
+  url: cli/cask-data-cli.yml
+- type: Sandbox
+  url: sandbox/cask-data-sandbox.yml
+- type: ChangeLog
+  url: changelog/cask-data-changelog.yml
+- type: Lifecycle
+  url: lifecycle/cask-data-lifecycle.yml
+- type: Authentication
+  url: authentication/cask-data-authentication.yml
+- type: VulnerabilityDisclosure
+  url: security/cask-data-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/cask-data-domain-security.yml
+- type: Conventions
+  url: conventions/cask-data-conventions.yml
+- type: DataModel
+  url: data-model/cask-data-data-model.yml
+- type: ErrorCatalog
+  url: errors/cask-data-problem-types.yml
+- type: Conformance
+  url: conformance/cask-data-conformance.yml
+- type: WellKnown
+  url: well-known/cask-data-well-known.yml
+- type: MCPServer
+  url: mcp/cask-data-mcp.yml
+- type: LLMsTxt
+  url: llms/cask-data-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

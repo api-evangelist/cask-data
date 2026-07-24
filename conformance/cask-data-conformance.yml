@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+standards:
+- id: rest
+  conforms: true
+  evidence: Resource-oriented HTTP RESTful API rooted at /v3/namespaces with GET/PUT/POST/DELETE verbs.
+- id: json
+  conforms: true
+  evidence: Request and response bodies are application/json.
+- id: bearer-token-auth
+  conforms: true
+  evidence: Optional perimeter security issues access tokens presented as Authorization Bearer tokens.
+- id: apache-2.0-open-source
+  conforms: true
+  evidence: CDAP is licensed Apache License 2.0 (github.com/cdapio/cdap/LICENSE).
+- id: oauth2
+  conforms: false
+  evidence: No OAuth 2.0 authorization server or scope surface documented.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use HTTP status + text/JSON messages, not application/problem+json.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No Sunset/Deprecation header contract documented.
+- id: asyncapi-events
+  conforms: false
+  evidence: No public webhook/event or AsyncAPI surface.

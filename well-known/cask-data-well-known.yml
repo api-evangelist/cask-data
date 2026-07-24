@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+host: https://cdap.io
+notes: >-
+  Probed the /.well-known/ discovery surface on the CDAP product site (cdap.io) and docs host
+  (docs.cdap.io). No well-known documents are published; docs.cdap.io 301-redirects to the
+  Confluence wiki (cdap.atlassian.net). Empty is the expected result for this self-hosted
+  open-source platform. Vulnerability disclosure is published as SECURITY.md, not security.txt
+  (see security/cask-data-vulnerability-disclosure.yml).
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

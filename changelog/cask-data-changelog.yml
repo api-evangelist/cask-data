@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cdapio/cdap/releases
+scheme: semver
+current_version: 6.11.1
+current_released: '2025-08-28'
+notes: >-
+  CDAP releases are published as tagged GitHub Releases on cdapio/cdap. Maven Central carries
+  point artifacts (e.g. cdap-client 6.11.4) beyond the latest full GitHub release. Recent window
+  captured below; the GitHub Releases page is the source of truth for full release notes.
+entries:
+- version: 6.11.1
+  date: '2025-08-28'
+  type: patch
+  highlights: Maintenance and bug-fix release on the 6.11 line.
+- version: 6.11.0
+  date: '2025-03-19'
+  type: minor
+  highlights: Feature release on the 6.11 line.
+- version: 6.10.1
+  date: '2024-05-29'
+  type: patch
+  highlights: Maintenance release.
+- version: 6.10.0
+  date: '2024-01-11'
+  type: minor
+  highlights: Feature release on the 6.10 line.
+- version: 6.9.2
+  date: '2023-09-02'
+  type: patch
+  highlights: Maintenance release.
+- version: 6.9.1
+  date: '2023-06-05'
+  type: patch
+  highlights: Maintenance release.
+- version: 6.8.3
+  date: '2023-06-01'
+  type: patch
+  highlights: Maintenance release.
+- version: 6.8.2
+  date: '2023-04-14'
+  type: patch
+  highlights: Maintenance release.

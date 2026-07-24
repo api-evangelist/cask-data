@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.cdap.io/cdap/current/en/reference-manual/cli/index.html
+binary: cdap cli
+distribution: io.cdap.cdap:cdap-cli (Maven Central); bundled with the CDAP Sandbox distribution
+notes: >-
+  The CDAP CLI is a first-party interactive/scripted command-line client for the CDAP HTTP
+  RESTful API. It ships inside the CDAP Sandbox (bin/cdap cli) and is published to Maven
+  Central as cdap-cli. Commands are documented in the CDAP Reference Manual; the surface
+  below is grouped by the platform resources the CLI operates on.
+install:
+- method: sandbox
+  command: "bin/cdap cli   # from an unpacked CDAP Sandbox"
+- method: maven
+  command: "io.cdap.cdap:cdap-cli"
+command_groups:
+- group: connection
+  purpose: Connect the CLI to a CDAP instance / namespace and manage the active session.
+  examples: [connect, use namespace, set, render]
+- group: application-lifecycle
+  purpose: Deploy, start, stop, list, and delete applications and their programs.
+  examples: [deploy app, list apps, start program, stop program, delete app]
+- group: artifact
+  purpose: Manage CDAP artifacts (application and plugin JARs) and their versions.
+  examples: [load artifact, list artifacts, describe artifact, delete artifact]
+- group: dataset
+  purpose: Create, list, describe, truncate, and delete datasets.
+  examples: [create dataset instance, list datasets, describe dataset, delete dataset instance]
+- group: service
+  purpose: Call user service and system service endpoints exposed by running applications.
+  examples: [call service, list service endpoints]
+- group: preferences
+  purpose: Get and set preferences at instance, namespace, application, and program scope.
+  examples: [get preferences, set preferences, delete preferences]
+- group: metadata
+  purpose: Search, add, and remove metadata tags and properties on CDAP entities; view lineage.
+  examples: [search metadata, add metadata-tags, get metadata]
+- group: query
+  purpose: Run ad-hoc SQL (Explore) queries against datasets and fetch results.
+  examples: [execute, get query status, get query results]
+- group: metrics-logs
+  purpose: Retrieve metrics and program run logs.
+  examples: [get metrics, get logs]
+- group: namespace
+  purpose: Create, list, describe, and delete namespaces.
+  examples: [create namespace, list namespaces, describe namespace, delete namespace]

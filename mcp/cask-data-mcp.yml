@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+notes: >-
+  No official hosted/remote MCP server is published for CDAP. The tool list below is a CANDIDATE
+  derived from the CDAP v3 HTTP RESTful API resource operations — a starting point for wrapping a
+  self-hosted CDAP instance as an MCP server, not a provider claim.
+server:
+  name: cdap
+  transport: http
+  url: null
+tools:
+- name: list_namespaces
+  description: List CDAP namespaces.
+  source_operation: "GET /v3/namespaces"
+- name: list_apps
+  description: List applications in a namespace.
+  source_operation: "GET /v3/namespaces/{namespace}/apps"
+- name: deploy_app
+  description: Deploy an application from an artifact.
+  source_operation: "PUT /v3/namespaces/{namespace}/apps/{app-id}"
+- name: start_program
+  description: Start a program (workflow/service/spark/mapreduce/worker).
+  source_operation: "POST /v3/namespaces/{namespace}/apps/{app-id}/{program-type}/{program-id}/start"
+- name: stop_program
+  description: Stop a running program.
+  source_operation: "POST /v3/namespaces/{namespace}/apps/{app-id}/{program-type}/{program-id}/stop"
+- name: list_datasets
+  description: List datasets in a namespace.
+  source_operation: "GET /v3/namespaces/{namespace}/data/datasets"
+- name: list_artifacts
+  description: List artifacts in a namespace.
+  source_operation: "GET /v3/namespaces/{namespace}/artifacts"
+- name: search_metadata
+  description: Search entity metadata (tags/properties) in a namespace.
+  source_operation: "GET /v3/namespaces/{namespace}/metadata/search"
+- name: run_query
+  description: Execute an ad-hoc SQL (Explore) query.
+  source_operation: "POST /v3/namespaces/{namespace}/data/explore/queries"
+- name: get_metrics
+  description: Query platform and program metrics.
+  source_operation: "POST /v3/metrics/query"

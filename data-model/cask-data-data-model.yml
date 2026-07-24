@@ -1,0 +1,65 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+summary: >-
+  Entity-relationship model of CDAP derived from the v3 HTTP RESTful API resource hierarchy.
+  Everything is scoped to a Namespace; Applications are deployed from Artifacts and contain
+  Programs; Datasets store data; Metadata (tags/properties/lineage) attaches to entities.
+entities:
+- name: Namespace
+  path: /v3/namespaces/{namespace}
+  description: Top-level tenant/isolation boundary; all user resources live inside a namespace.
+- name: Artifact
+  path: /v3/namespaces/{namespace}/artifacts/{artifact-name}
+  description: A versioned application or plugin JAR that Applications are created from.
+- name: Application
+  path: /v3/namespaces/{namespace}/apps/{app-id}
+  description: A deployed CDAP application, instantiated from an Artifact; a container of Programs.
+- name: Program
+  path: /v3/namespaces/{namespace}/apps/{app-id}/{program-type}/{program-id}
+  description: An executable within an Application (workflow, mapreduce, spark, service, worker).
+- name: Dataset
+  path: /v3/namespaces/{namespace}/data/datasets/{dataset-id}
+  description: A managed dataset (table/fileset/etc.) read and written by Programs.
+- name: Service
+  path: /v3/namespaces/{namespace}/apps/{app-id}/services/{service-id}
+  description: A long-running program exposing user HTTP endpoints.
+- name: Metadata
+  path: /v3/namespaces/{namespace}/metadata
+  description: Tags, properties, and lineage attached to any CDAP entity.
+- name: Preferences
+  path: /v3/namespaces/{namespace}/preferences
+  description: Key/value configuration resolvable at instance, namespace, app, and program scope.
+relationships:
+- from: Application
+  to: Namespace
+  type: belongs_to
+  via: namespace
+- from: Application
+  to: Artifact
+  type: belongs_to
+  via: artifact
+- from: Program
+  to: Application
+  type: belongs_to
+  via: app-id
+- from: Namespace
+  to: Application
+  type: has_many
+  via: apps
+- from: Namespace
+  to: Dataset
+  type: has_many
+  via: datasets
+- from: Namespace
+  to: Artifact
+  type: has_many
+  via: artifacts
+- from: Application
+  to: Service
+  type: has_many
+  via: services
+- from: Metadata
+  to: Namespace
+  type: belongs_to
+  via: entity-id

@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+format: http-status
+envelope: >-
+  The CDAP HTTP RESTful API signals errors with standard HTTP status codes and a plain-text or
+  JSON message body (not RFC 9457 application/problem+json). Titles/remediation below are derived
+  from the CDAP Reference Manual's documented response codes.
+problems:
+- status: 200
+  title: OK
+  meaning: Request succeeded.
+- status: 400
+  title: Bad Request
+  meaning: Malformed request, invalid parameters, or an unparseable body.
+  remediation: Correct the request path, query parameters, or JSON body.
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid access token on a security-enabled CDAP instance.
+  remediation: Obtain a valid access token via the authentication server and send it as a Bearer token.
+- status: 403
+  title: Forbidden
+  meaning: The authenticated principal lacks privilege for the requested entity/action.
+  remediation: Grant the required privilege via CDAP authorization, or use an authorized principal.
+- status: 404
+  title: Not Found
+  meaning: The referenced namespace, application, program, dataset, or artifact does not exist.
+  remediation: Verify the entity id and namespace in the request path.
+- status: 405
+  title: Method Not Allowed
+  meaning: The HTTP method is not supported on the target resource.
+- status: 409
+  title: Conflict
+  meaning: The resource already exists or is in a conflicting state (e.g. starting an already-running program).
+  remediation: Reconcile the current state before retrying.
+- status: 500
+  title: Internal Server Error
+  meaning: An unexpected server-side error occurred.
+  remediation: Retry; inspect CDAP system logs if the error persists.
+- status: 503
+  title: Service Unavailable
+  meaning: A CDAP system service is temporarily unavailable (e.g. still starting).
+  remediation: Wait for services to become available and retry.

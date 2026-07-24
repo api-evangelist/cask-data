@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cdapio/cdap/releases
+versioning:
+  api_scheme: uri-path
+  api_current: v3
+  api_base_path: /v3/namespaces
+  product_scheme: semver
+  product_current: 6.11.1
+  docs: https://docs.cdap.io/cdap/current/en/reference-manual/http-restful-api/index.html
+releases:
+  url: https://github.com/cdapio/cdap/releases
+  cadence: irregular (minor + patch releases; ~1-3 per year in recent window)
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal public deprecation policy or RFC 8594 Sunset/Deprecation header contract is
+    documented for the CDAP HTTP RESTful API. The API version has remained v3 across the 6.x line.
+sla:
+  url: null
+  note: >-
+    CDAP is self-hosted open source; there is no vendor SLA for the open source distribution.
+    Managed SLA (if any) applies only to Google Cloud Data Fusion, a separate Google product.
+status_page: null
+status_page_note: >-
+  No status page for open-source CDAP (self-hosted). Google Cloud Data Fusion availability is
+  reflected in the Google Cloud Status Dashboard, not a Cask/CDAP status page.
+deprecated_operations: []
