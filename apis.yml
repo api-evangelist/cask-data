@@ -49,6 +49,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Releases
+  url: https://github.com/cdapio/cdap/releases
+- type: CodeOfConduct
+  url: https://github.com/cdapio/cdap/blob/develop/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/cdapio/cdap/blob/develop/CONTRIBUTING.rst
 - type: Website
   url: https://cdap.io
 - type: Documentation
