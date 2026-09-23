@@ -1,20 +1,25 @@
 generated: '2026-07-18'
 method: searched
 host: https://cdap.io
-notes: >-
-  Probed the /.well-known/ discovery surface on the CDAP product site (cdap.io) and docs host
-  (docs.cdap.io). No well-known documents are published; docs.cdap.io 301-redirects to the
-  Confluence wiki (cdap.atlassian.net). Empty is the expected result for this self-hosted
-  open-source platform. Vulnerability disclosure is published as SECURITY.md, not security.txt
-  (see security/cask-data-vulnerability-disclosure.yml).
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+notes: Probed the /.well-known/ discovery surface on the CDAP product site (cdap.io) and docs host (docs.cdap.io).
+  No well-known documents are published; docs.cdap.io 301-redirects to the Confluence wiki (cdap.atlassian.net).
+  Empty is the expected result for this self-hosted open-source platform. Vulnerability disclosure is
+  published as SECURITY.md, not security.txt (see security/cask-data-vulnerability-disclosure.yml).
+hosts:
+- host: https://cdap.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
